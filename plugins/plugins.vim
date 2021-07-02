@@ -1,68 +1,76 @@
-"Archivo para los Plugins a instalar
-call plug#begin('~/.vim/plugged') "Lugar donde se van a instalar los plugins
-" Temas
+"----------Aqui agregamos todos los plugins a instalar----------
+call plug#begin('~/.vim/plugged') "lugar donde se van a instalar los plugins
+"----------Temas sintaxis
 Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
-"Habilitar sintaxis
-Plug 'sheerun/vim-polyglot'
-"Highlight para cpp
-Plug 'vim-jp/vim-cpp'
 Plug 'joshdick/onedark.vim'
 Plug 'safv12/andromeda.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'hzchirs/vim-material'
 Plug 'atelierbram/Base2Tone-vim'
 
-"IDE
-Plug 'easymotion/vim-easymotion'
-"Navegar con C-h C-l C-j C-k
-Plug 'christoomey/vim-tmux-navigator'
-"NERDTREE
-Plug 'preservim/nerdtree'
-"Permite agregar iconos
-Plug 'ryanoasis/vim-devicons'
-Plug 'ryanoasis/nerd-fonts'
-"Color para nerdtree
+"----------Temas barra de estado
+Plug 'shinchu/lightline-gruvbox.vim'
 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Airline
+"----------Linea de estado
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Stable version of coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'neoclide/coc-java'
-Plug 'clangd/coc-clangd'
-"Plug 'neoclide/coc-python'
-Plug 'MaskRay/ccls'
-"Cerrar los pares () [] {} '' 
+
+"----------Sintaxis
+"habilita resaltado de sintaxis
+Plug 'sheerun/vim-polyglot'
+
+"----------Iconos
+"Plug 'ryanoasis/vim-devicons'
+
+"----------NERDTree explorador de archivos
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
+
+
+"Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "color de sintaxis para nerdtree
+"----------Autocompletar llaves
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
-"FZF
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim',
-"colorizer plugin for #fe4918
-Plug 'norcalli/nvim-colorizer.lua'
-"Multiple cursor like in vscode
-Plug 'terryma/vim-multiple-cursors'
-"Have the indent lines 
+
+"----------Navegar entre ventanas con C-h C-j C-k C-l
+Plug 'christoomey/vim-tmux-navigator'
+
+"----------Identacion
 Plug 'yggdroot/indentline'
-"Comentar lineas
+
+"----------Comentar lineas
 Plug 'preservim/nerdcommenter'
 
-"Git Integration ______________
-Plug 'mhinz/vim-signify' "Indica que se ha agregado o modificado
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb' "Permite hacer add, commit, push, pull, etc.
-Plug 'junegunn/gv.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-"Smooth Scrolling
+"----------Desplazamiento suavizado
 Plug 'psliwka/vim-smoothie'
-"Fuentes parcheadas
-Plug 'powerline/fonts'
-Plug 'Lokaltog/vim-powerline'
-Plug 'powerline/powerline'
-"Pantalla de inicio
-Plug 'mhinz/vim-startify'
-"_____________________________
-call plug#end() "Cerrar el apartado de instalacion de plugin
+
+"----------Buscar caracteres
+Plug 'easymotion/vim-easymotion'
+
+"----------Buscador FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+"----------Multiple cursor
+Plug 'terryma/vim-multiple-cursors'
+
+"----------Integracion con git
+Plug 'mhinz/vim-signify' "indica lineas agregadas, modificadas y eliminadas en un sistema de control de versiones
+Plug 'tpope/vim-fugitive' "Permite usar los comandos de git (Digamos que es el Git)
+Plug 'tpope/vim-rhubarb' "(Digamos que es el Hub)
+Plug 'junegunn/gv.vim' "Navegador  de git commit
+"Plug 'Xuyuanp/nerdtree-git-plugin' "Muestra los indicadores de estado de git
+
+"----------Colores a codigos de colores hex
+Plug 'lilydjwg/colorizer'
+
+
+"---------- Herramientas
+Plug 'simrat39/rust-tools.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'rust-analyzer/rust-analyzer'
+call plug#end() "cerrar el apartado de instalacion de plugins
+
+

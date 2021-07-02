@@ -1,25 +1,15 @@
-"██████╗░██╗░░░░░██╗░░░██╗░██████╗░░░░░░░░█████╗░░█████╗░███╗░░██╗███████╗██╗░██████╗░
-"██╔══██╗██║░░░░░██║░░░██║██╔════╝░░░░░░░██╔══██╗██╔══██╗████╗░██║██╔════╝██║██╔════╝░
-"██████╔╝██║░░░░░██║░░░██║██║░░██╗░█████╗██║░░╚═╝██║░░██║██╔██╗██║█████╗░░██║██║░░██╗░
-"██╔═══╝░██║░░░░░██║░░░██║██║░░╚██╗╚════╝██║░░██╗██║░░██║██║╚████║██╔══╝░░██║██║░░╚██╗
-"██║░░░░░███████╗╚██████╔╝╚██████╔╝░░░░░░╚█████╔╝╚█████╔╝██║░╚███║██║░░░░░██║╚██████╔╝
-"╚═╝░░░░░╚══════╝░╚═════╝░░╚═════╝░░░░░░░░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚═╝░╚═════╝░
+"---------------Configuracion de los plugins---------------
 
-"import COC config
-"source ~/AppData/Local/Nvim/plugins/coc-config.vim
-"source coc-config.vim
-set t_Co=256
-"----------Configuracion de gruvbox----------> https://github.com/morhetz/gruvbox
-let g:gruvbox_contrast_dark = "medium" "Cambia el contraste del modo oscuro
+"----------Configuracion de gruvbox
+let g:gruvbox_contrast_dark = "hard"
 
-"----------Configuracion de vim-airline------> https://github.com/vim-airline/vim-airline
-"Seleccionar tema para la barra inferior
+"----------Configuracion Airline
+"tema para la barra inferior
 let g:airline_theme = 'desertink' "ayu_dark, behelit, dark_minimal, desertink, google_dark, raven, term, tomorrow, wombat, material 
-"Los temas para la barra de abajo se encuentran en
+"Los temas para la barra de inferior se encuentran en
 "C:\Users\DIEGO\.vim\plugged\vim-airline-themes\autoload\airline\themes
 
-
-"Habilitar la barra inferior
+"barra superior
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = ''
@@ -28,42 +18,81 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 "Configura el formato del nombre de ventana
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_powerline_fonts = 1
 
   if !exists('g:airline_symbols')
     let g:airline_symbols = {}
   endif
 
-" airline symbols
+" airline symbols barra inferior
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
+"let g:airline_symbols.branch = ''
+let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.linenr = ' :' "numero de linea
+let g:airline_symbols.maxlinenr = ' ' "total de lineas
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.colnr = ' :' "numero de la columna actual
+let g:airline_symbols.dirty='⚡'
 
-" Always show tabs
-set showtabline=2
+"habilitar deteccion de modificacion
+let g:airline_detect_modified=1
+"habilitar deteccion de pegado
+let g:airline_detect_paste=1
+"habilitar deteccion clave
+let g:airline_detect_crypt=1
 
-"Git integration config
-let g:signify_sign_add               = '+'
-let g:signify_sign_delete            = '_'
-let g:signify_sign_delete_first_line = '‾'
-let g:signify_sign_change            = '~'
-" Colorear las señales
- "highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
- "highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
- "highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
-":SignifyToggle,   sirve para ocultar o mostrar los signos de add, change etc
-":SignifyToggleHighlight,   sirve para marcar en color las lineas agregadas,etc...
+"habilitar/desactivar integracion con fugitive
+let g:airline#extension#branch#enable = 1
 
-"----------Vim-devicons, neerd icons
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1 "Habilitar iconos para neerdtree
-let g:webdevicons_enable_airline_tabline = 1 "Habilitar iconos para airline
-let g:webdevicons_enable_airline_statusline = 1
-let g:webdevicons_enable_ctrlp = 1
-let g:webdevicons_enable_startify = 1
+"por defecto airline usa simbolos unicode, si queremos usar sombolo powerline declaramos la siguiente variable
+let g:airline_powerline_fonts = 1
 
+
+"----------Configuracion NERDTree
+let g:indentLine_enabled = 1
+let g:indentLine_char = '▏'
+let g:indentLine_faster = 1
+let g:indentLine_fileTypeExclude=["nerdtree"]
+let g:NERDTreeDirArrowExpandable = '▷'
+let g:NERDTreeDirArrowCollapsible = '▽'
+
+let g:airline#extensions#nerdtree_statusline = 1 "habilitar/deshabilitar statusline en nertdtree
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let NERDTreeShowLineNumbers=1 
+"let NERDTreeMinimalUI=1 "oculta el retorno de carpetas (up a dir)
+"let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+"let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+
+"----------Color de lineas de identacion
+let g:indentLine_enabled = 0 "0 = deshabilitado 
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+":IndentLinesToggle activa y desactiva las líneas.
+"let g:indentLine_char = '·'
+
+
+
+"----------Dev icons
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1 "alinear a la derecha los archivos
+"let g:webdevicons_enable = 1 "habilitar iconos
+"let g:webdevicons_enable_startify = 1
+
+
+"----------NERDTree y git REVISAR
+let g:NERDTreeGitStatusShowIgnored = 1
+let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
