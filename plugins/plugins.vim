@@ -20,12 +20,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 
 "----------Iconos
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 "----------NERDTree explorador de archivos
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin' "SIN FUNCION
 
 
 "Plug 'preservim/nerdtree'
@@ -61,11 +60,9 @@ Plug 'mhinz/vim-signify' "indica lineas agregadas, modificadas y eliminadas en u
 Plug 'tpope/vim-fugitive' "Permite usar los comandos de git (Digamos que es el Git)
 Plug 'tpope/vim-rhubarb' "(Digamos que es el Hub)
 Plug 'junegunn/gv.vim' "Navegador  de git commit
-"Plug 'Xuyuanp/nerdtree-git-plugin' "Muestra los indicadores de estado de git
 
 "----------Colores a codigos de colores hex
 Plug 'lilydjwg/colorizer'
-
 
 "---------- Herramientas
 Plug 'simrat39/rust-tools.nvim'

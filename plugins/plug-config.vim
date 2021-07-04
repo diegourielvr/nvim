@@ -61,7 +61,7 @@ let g:NERDTreeDirArrowCollapsible = '▽'
 
 let g:airline#extensions#nerdtree_statusline = 1 "habilitar/deshabilitar statusline en nertdtree
 let g:NERDTreeFileExtensionHighlightFullName = 1
-let NERDTreeShowLineNumbers=1 
+"let NERDTreeShowLineNumbers=1 "mostrar numeros a la izquierda de la ventana de NERDTree 
 "let NERDTreeMinimalUI=1 "oculta el retorno de carpetas (up a dir)
 "let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 "let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
@@ -74,25 +74,9 @@ let g:indentLine_enabled = 0 "0 = deshabilitado
 "let g:indentLine_char = '·'
 
 
-
 "----------Dev icons
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1 "alinear a la derecha los archivos
+"let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1 "alinear a la derecha los archivos
 "let g:webdevicons_enable = 1 "habilitar iconos
 "let g:webdevicons_enable_startify = 1
 
 
-"----------NERDTree y git REVISAR
-let g:NERDTreeGitStatusShowIgnored = 1
-let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'✭',
-                \ 'Renamed'   :'➜',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✖',
-                \ 'Dirty'     :'✗',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }

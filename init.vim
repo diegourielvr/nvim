@@ -9,7 +9,7 @@ set encoding=utf-8 	"configurar el formato de caraccteres para que sea utf-8
 set showmatch		"salta a un simbolo de apertura o cierre {[(/* if	etc...		*/)]}
 set sw=4 		"tab realiza 4 espacios
 set relativenumber 	"cambia el modo de los numeros de lineas, solo se muestra el numero delinea actual
-let mapleader=" "	"espacio es lña tecla para ejecutar los plugin
+let mapleader=" "	"espacio es la tecla para ejecutar los plugin
 set laststatus=2	"mostrar la linea de estado siempre
 set backspace=2		"la tecla de retroceso funciona como los demas programas
 "set guioptions-=T	"sin barra de herramientas
@@ -19,7 +19,8 @@ set termguicolors	"nvim emite colores verdaderos(24 bits) de la terminal
 set autoindent		"utiliza la identacion de la linea anterior
 filetype indent on
 set showtabline=2	"mostrar pestañas
-set cursorline 		"resalta la linea actual
+"set cursorline 		"resalta la linea actual
+set tabstop=4 "TAB realiza un ancho de 4 espacios
 
 "------------------Archivos de cabacera(Carga aqui el codigo)------------------
 source ~/Appdata/Local/Nvim/plugins/plugins.vim "Agrega los plugins a instalar
@@ -39,3 +40,11 @@ colorscheme gruvbox "gruvbox / onedark / andromeda / tokyonight / vim-material /
 "{'atajo': 'ruta'}, 'ruta' podemos usar cualquiera de estas dos opciones para
 "agregar un marcador en startify
 "let g:startify_bookmarks = [{'nv': '~/Appdata/Local/nvim'}, '~/Desktop/UAM TRIMESTRES']
+
+
+
+
+
+
+
+

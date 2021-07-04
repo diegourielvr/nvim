@@ -1,0 +1,54 @@
+				Un poco sobre buffers, ventanas y pestañas en vim                 
++ BUFFERS:
+	- Un buffer es un lugar donde podemos guardar texto, algo asi como
+	una memoria.
+	En este buffer/memoria podemos no solo guardar texto, si no que
+	tambien lo podemos editar
+	
+	Por ejemplo: Cuando abrimos neovim por defecto se inicia un buffer vacio.
+	Para saber cuantos buffers/memorias tenemos abiertos podemos usar los
+	comandos... :ls o :buffers o :Buffers con fzf
+
++ VENTANAS:	
+	- Una ventana nos permite ver el contenido de un buffer/memoria, no solo eso
+	si no que, nos permite ver y modificar el contenido de un buffer.
+	Cuando abrimos neovim por defecto comenzamos con una memoria y una ventana
+	Ej: si usamos el comando :split tendremos dos ventanas, lo que nos permitiria
+	trabajar con ventanas paralelas
+
++ ESTADO DE UN BUFFER
+	- Un buffer/memoria puede encontrarse en tres estados:
+		* Activo: Cuando el contenido de un buffer se muestra en una ventana
+		* Oculto: Cuando el contenido de un buffer no se muestra en una ventana
+		*Inactivo: Cuando el contenido de un buffer no se muestra en ninguna ventana
+		y además no contiene nada o esta vacia.
+	Por ejemplo: El siguiente comando nos muestra 3 ventanas donde cada ventana
+	contiene uno de los archivos/buffer
+				comando: nvim -o archivo1 archivo2 archivo3
+
++ PESTAÑAS: 
+	- Una pestaña es una colección de ventanas 
+	Descrito en otras palarbas... Una pestala puede contener una o más ventanas
+	y cada ventana contiene un buffer/memoria
+
++ CREAR Y ELIMINAR BUFFERS/MEMORIAS:
+	:new - crea una nueva memoria
+	:badd <archivo> - crea una memoria para <archivo> pero sin abrirlo
+	:bd - borrar memoria o cerrar buffer
+	:bd <TAB> - alternar entre los distintios buffers para cerrar alguno
+
++ CREAR Y ELIMINAR VENTANAS
+	:split o :sp - permite dividir la ventana actual horizontalmente
+	:vs - permite dividir la ventana actual verticalmente
+	:close - permite cerrar la ventana actual
+	:q - tambien cierra la ventana actual (solo si hay mas de una ventana en la misma pestaña)
+
++ CREAR Y ELIMINAR PESTAÑAS
+	:tabe o :tabnew - crear una nueva pestaña
+	:tabclose - cerrar una pestaña
+	:q - tambien cierra una pestaña (solo si hay una ventana activa)
+
+
+Referencias:
+[1] https://atareao.es/tutorial/vim/memorias-ventanas-y-pestanas-en-vim/
+
