@@ -26,6 +26,7 @@ set tabstop=4 "TAB realiza un ancho de 4 espacios
 source ~/Appdata/Local/Nvim/plugins/plugins.vim "Agrega los plugins a instalar
 source ~/Appdata/Local/Nvim/plugins/plug-config.vim "Configuracion de los plugins
 source ~/Appdata/Local/Nvim/plugins/atajos.vim "Archivo con atajos de teclado
+source ~/Appdata/Local/Nvim/plugins/coc-config.vim
 "------------------Fin archivos de cabecera------------------------------------
 
 
@@ -39,8 +40,7 @@ colorscheme gruvbox "gruvbox / onedark / andromeda / tokyonight / vim-material /
 "Startify y nerdtree, pantalla de inicio con marcadores
 "{'atajo': 'ruta'}, 'ruta' podemos usar cualquiera de estas dos opciones para
 "agregar un marcador en startify
-"let g:startify_bookmarks = [{'nv': '~/Appdata/Local/nvim'}, '~/Desktop/UAM TRIMESTRES']
-
+let g:startify_bookmarks = [{'nv': '~/Appdata/Local/nvim'}, '~/Desktop/UAM TRIMESTRES', {'gt': '~/Documents/GitHub'}]
 
 
 

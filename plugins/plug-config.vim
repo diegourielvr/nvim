@@ -80,3 +80,18 @@ let g:indentLine_enabled = 0 "0 = deshabilitado
 "let g:webdevicons_enable_startify = 1
 
 
+"Integracion con git
+"let g:signify_sign_add               = '+'
+"let g:signify_sign_delete            = '_'
+"let g:signify_sign_delete_first_line = '‾'
+"let g:signify_sign_change            = '~'
+ 
+"Integracion con git
+let g:signify_sign_add               = ''
+let g:signify_sign_delete            = ''
+let g:signify_sign_delete_first_line = ''
+let g:signify_sign_change            = ''
+ 
+
+"Para usar coc-clangd
+"Instalar llvm y agregar el path al archivo :CocConfig

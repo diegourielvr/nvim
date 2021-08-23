@@ -64,10 +64,26 @@ Plug 'junegunn/gv.vim' "Navegador  de git commit
 "----------Colores a codigos de colores hex
 Plug 'lilydjwg/colorizer'
 
-"---------- Herramientas
+"----------Herramientas
 Plug 'simrat39/rust-tools.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rust-analyzer/rust-analyzer'
+
+"----------COC Plugins
+" Stable version of coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+":CocInstall coc-json
+":CocInstall coc-tsserver
+":CocInstall coc-phpls
+":CocInstall coc-clangd
+":CocInstall coc-pyright
+":CocInstall coc-vetur
+":CocInstall coc-java Si menciona un error (The server crahsed n times...)
+"     Pagina con el error mencionado: https://github.com/neoclide/coc-java/issues/99
+"     Descargar .tar.gz de: https://download.eclipse.org/jdtls/milestones/0.57.0/
+"     Extrar y reemplazar por los archivos de la ruta: ~\AppData\Local\coc\extensions\coc-java-data\server 
+":CocInstall coc-html
+Plug 'mhinz/vim-startify'
 call plug#end() "cerrar el apartado de instalacion de plugins
 
 

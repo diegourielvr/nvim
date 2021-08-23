@@ -136,16 +136,35 @@ nmap <leader>cs :Colors<CR>
 "undo
 "en modo normal pulsar <u>
 "redo
-"en modo normal pulas <Ctrl+r>
+"en modo normal pulsar <Ctrl+r>
+"Entrar en modo visual - v-line
+"visual = v (lower-case)
+"v-line = V (upper-case)
+"$ = ir al final de la linea, en modo v, V se selecciona toda la linea
+"0 = ir al inicio de la linea
 
+"----------Coc-Settings
+"-----java
+"gd, gi, 
 
 
 "----------Salir del modo insertar en la terminal
 "tnoremap <leader> <Esc> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
 
+" Configuracion fold marker ------ {{{
+augroup config_setting
+  autocmd!
+  autocmd FileType vim setlocal foldlevel=0 foldmethod=marker
+  autocmd FileType cpp setlocal foldlevel=0 foldmethod=marker
+  autocmd FileType html setlocal foldlevel=0 foldmethod=marker
+augroup END
+"}}}
+"Para agregar un marcador que oculte codigo agregarmos lo que queremos ocultar
+"u organizar entre llaves:
+" Para abrir este marcador, presionar 'zo' o 'za' {{{  
+"/*Code*/ 
+"}}} Para ocultar este marcador, presionar 'zc' o 'za'
 
-
-
-
-
+"moverse al inicio de una linea: _
+"moverse al final de una linea: $
