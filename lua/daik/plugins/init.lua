@@ -12,4 +12,10 @@ return {
 		  require("mini.pairs").setup(opts)
 		end,
 	},
+	{
+		"szw/vim-maximizer", -- Ventana maximizada
+		keys = {
+			{"<leader>ma", ":MaximizerToggle<CR>", desc = "Maximizar ventana", mode = "n", silent = true},
+		}
+	},
 }

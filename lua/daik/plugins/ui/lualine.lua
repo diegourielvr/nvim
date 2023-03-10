@@ -199,9 +199,9 @@ return { 'nvim-lualine/lualine.nvim',
 					table.insert(buf_client_names, client.name)
 				end
 
-				if client.name == "copilot" then
-					copilot_active = true
-				end
+				-- if client.name == "copilot" then
+				-- 	copilot_active = true
+				-- end
 			end
 
 			function list_registered_providers_names(filetype)
@@ -229,8 +229,8 @@ return { 'nvim-lualine/lualine.nvim',
 				return registered_providers[null_ls.methods.FORMATTING] or {}
 			end
 			-- formatters
-			-- local supported_formatters = formatters_list_registered(buf_ft)
-			-- vim.list_extend(buf_client_names, supported_formatters)
+			local supported_formatters = formatters_list_registered(buf_ft)
+			vim.list_extend(buf_client_names, supported_formatters)
 
 			-- linters
 			local supported_linters = list_registered(buf_ft)
@@ -240,9 +240,9 @@ return { 'nvim-lualine/lualine.nvim',
 			local language_servers = " " .. table.concat(unique_client_names, ", ") .. ""
 			-- local language_servers = " " .. table.concat(unique_client_names, ", ") .. ""
 
-			if copilot_active then
-				language_servers = language_servers .. "%#SLCopilot#" .. ""
-			end
+			-- if copilot_active then
+			-- 	language_servers = language_servers .. "%#SLCopilot#" .. ""
+			-- end
 
 			return language_servers
 		end

@@ -1,10 +1,5 @@
-local servers = {
-	"lua_ls",
-	-- "pyright",
-	-- "clangd",
-	"vimls",
-	-- "marksman",
-}
+-- Lista de servidores
+local servers = require("daik.plugins.lsp.servers").servers
 
 return {
 	{
