@@ -247,11 +247,11 @@ return { 'nvim-lualine/lualine.nvim',
 			return language_servers
 		end
 
-		local win = {
-			function ()
-				return "%{%v:lua.require'nvim-navic'.get_location()%}"
-			end,
-		}
+		-- local win = {
+		-- 	function ()
+		-- 		return "%{%v:lua.require'nvim-navic'.get_location()%}"
+		-- 	end,
+		-- }
 
 		require('lualine').setup({
 			options = {
@@ -263,21 +263,21 @@ return { 'nvim-lualine/lualine.nvim',
 				disabled_filetypes = { "alpha", "dashboard", "packer", "neo-tree" },
 				always_divide_middle = true,
 			},
-			winbar = {
-			  	lualine_a = {},
-			  	lualine_b = {
-					{
-						'filename',
-						path = 1, -- 0: just filename, 1: relative path, 2: absolute path, 3
-					}
-				},
-			  	lualine_c = {
-					win,
-				},
-			  	lualine_x = {},
-			  	lualine_y = {},
-			  	lualine_z = {}
-			},
+			-- winbar = {
+			--   	lualine_a = {},
+			--   	lualine_b = {
+			-- 		{
+			-- 			'filename',
+			-- 			path = 1, -- 0: just filename, 1: relative path, 2: absolute path, 3
+			-- 		}
+			-- 	},
+			--   	lualine_c = {
+			-- 		win,
+			-- 	},
+			--   	lualine_x = {},
+			--   	lualine_y = {},
+			--   	lualine_z = {}
+			-- },
 			--Componentes disponibles
 			-- https://github.com/nvim-lualine/lualine.nvim#available-components
 			sections = {

@@ -20,10 +20,10 @@ local on_attach = function (client, bufnr)
 	vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, bufopts)
 	vim.keymap.set("n", "<leader>lq", vim.diagnostic.setloclist, bufopts)
 
-	local navic = require ('nvim-navic')
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
-	end
+	-- local navic = require ('nvim-navic')
+	-- if client.server_capabilities.documentSymbolProvider then
+	-- 	navic.attach(client, bufnr)
+	-- end
 end
 
 local configDiagnostic = function ()
