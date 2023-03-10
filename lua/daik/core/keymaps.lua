@@ -37,3 +37,5 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Tab navigation
 keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+
+keymap("n", "<leader>T", ":lua transparentScheme()<CR>", opts)

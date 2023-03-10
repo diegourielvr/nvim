@@ -1,5 +1,4 @@
 require('daik.core.options')
 require('daik.core.keymaps')
 require('daik.core.lazy')
--- require('daik.core.autocmd')
-require('daik.core.extra')
+require('daik.core.autocmd')

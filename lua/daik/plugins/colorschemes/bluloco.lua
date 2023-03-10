@@ -5,7 +5,7 @@ return {
 	config = function()
 		require("bluloco").setup({
 			style = "dark", -- auto | dark | light 
-			-- transparent = true,
+			transparent = true,
 			guicursor = true,
 		})
 		vim.cmd('colorscheme bluloco')

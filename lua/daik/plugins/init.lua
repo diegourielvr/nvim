@@ -5,6 +5,7 @@ return {
 	{ import = "daik.plugins.lsp.mason"}, -- (1)
 	{ import = "daik.plugins.lsp.lsp"}, -- (2)
 	{ import = "daik.plugins.lsp.null-ls"},
+	{ import = "daik.plugins.lsp.lspsaga"},
 	{
 		"echasnovski/mini.pairs", -- Autocompletar llaves {} '' "" [] 
 		event = "VeryLazy",

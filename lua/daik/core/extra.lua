@@ -1,5 +1,0 @@
-vim.cmd "hi Normal guibg=NONE"
-vim.cmd "hi NormalFloat guibg=NONE"
-vim.cmd "hi StatusLine guibg=NONE"
-vim.cmd "hi NvimTreeNormal guibg=NONE"
-vim.cmd "hi TelescopeNormal guibg=NONE"

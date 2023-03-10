@@ -1,1 +1,2 @@
 require('daik.core')
+-- transparentScheme()

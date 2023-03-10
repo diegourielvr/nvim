@@ -3,12 +3,12 @@ return { 'nvim-lualine/lualine.nvim',
 	config = function()
 		local MODES = {
 			-- BUFFERS = colors.teal,
-			['c']  = {'C-L'      		  },
+			['c']  = {'    '      		  }, -- Command line (COMMAND-LINE)
 			['ce'] = {'NORMAL EX'         },
 			['cv'] = {'EX'                },
-			['i']  = {'I'            	  },
+			['i']  = {'    '           	  }, -- Insert (INSERT)
 			['ic'] = {'INS-COMPLETE'      },
-			['n']  = {'N'            	  },
+			['n']  = {'    '           	  }, -- Normal (NORMAL)
 			['no'] = {'OPERATOR-PENDING'  },
 			['r']  = {'HIT-ENTER'         },
 			['r?'] = {':CONFIRM'          },
@@ -19,8 +19,8 @@ return { 'nvim-lualine/lualine.nvim',
 			['S']  = {'SELECT'            },
 			['␓']  = {'SELECT'            },
 			['t']  = {'TERMINAL'          },
-			['v']  = {'V'            	  },
-			['V']  = {'V-L'       		  },
+			['v']  = {'    '              }, -- Visual (VISUAL) 
+			['V']  = {'    '       		  }, -- Visual Line (VISUAL-LINE)
 			['␖']  = {'VISUAL BLOCK'      },
 			['!']  = {'SHELL'             },
 		}
