@@ -8,6 +8,7 @@ Un buffer establece una conexión mediante un canal con el cliente LSP y el clie
 una solicitud attach al servidor parra que este monitoree los cambios del buffer y brinde las funciones que se establecela función attach.
 
 El orden de los plugins es importante, Mason-lspconfig recomienda el siguiente: Mason > Mason-lspconfig > nvim-lspconfig
+
 ## Plugin Mason y Mason-lspconfig
 
 Mason es un administrador de servidores, se encarga de descargar los servidores para LSP, Linters, DAP, etc.
@@ -15,6 +16,7 @@ Por lo que utilizaremos Mason para descargar los servidores desde neovim.
 Además de que Mason brinda una interfaz para su uso
 
 ### Config Mason
+
 ```lua
 {
     "williamboman/mason.nvim",
@@ -40,11 +42,13 @@ Además de que Mason brinda una interfaz para su uso
     end,
 } 
 ```
+
 Si vamos a utilizar nvim-lspconfig para configurar un cliente LSP, Mason recomienda usar Mason-lspconfig
 Mason-lspconfig se describe como un púente entre Mason y nvim-lspconfig, nvim-lspconfig utiliza otro tiop de nombres para los servidores
 y además Mason utliza un tipo diferente de nombres, por lo que traduce estos nombres de lspconfig a mason y permite indicar los servidores que queremos instalar
 
 ### Config Mason-lspconfig
+
 local servers = {
 	"lua_ls",
 	"vimls",
@@ -64,6 +68,7 @@ Este plugin no es necesario para configurar los servidores, pero es muy útil o 
 Permite configurar cada servidor con la función setup (lspconfig[server].setup{opts})
 
 ### Capabilities
+
 ### Función on_attach
 
 En esta función podemos definir los atajos que el servidor va a escuchar y responder con la información necesaria
@@ -91,12 +96,33 @@ lspconfig["lua_ls"].setup({
     end,
 })
 ```
+
 ### Plugin nvim-navic y on_attach
 
 Otros plugins pueden aprovecahar este cliente LSP para brindar caracteristicas como nvim-navic
-Ejemplo: navic tiene una función attach para 
+Ejemplo: navic tiene una función attach para:
 navic.attach(client, bufnr)
 
 ## Plugin null-ls
 
+Este plugin provee diferentes servicios como formateo, diagnostico, hover (definicion de variables o funciones), code actions, completions de código (formateo: identación, eliminar espacios, etc)
+Por ejemplo el cliente lsp de neovim utiliza null-ls para formatear codigo lua con la función vim.lsp.buf.format(),
+Es como los servidores lsp que proveen autocompletado, diagnosticos, etc.
+Por lo que tenemos que indicar las fuentes (sources) que quremos que utilice para cada tipo de archivo y brinde diagnosticos o formateo, compeltions, etc.
+Dichos sources se descargan (como servidores lsp con Mason),
+null-ls brinda diferentes metodos o fuentes:
+-- Code actions
+-- completions: Como LuaSnip
+-- Formatting
+-- diagnosticos
+-- Hover
 
+Para instalar las fuentes se puede hacer de forma manual,
+como cualquier otro plugin.
+Aunque tambien podemos utilizar Mason para instalar las fuentes (sources) necesarias
+
+### Notas
+
+No es necesario instalar clang-format para null-ls si instalamos clangd con lsp,
+ya que ocasionan errores por el tipo de codificación (utf-8 o utf-16).
+Además el servidor lsp clangd ya trae las caracteristicas de este formatter y las brinda con lsp

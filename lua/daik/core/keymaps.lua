@@ -39,3 +39,7 @@ keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 keymap("n", "<leader>T", ":lua transparentScheme()<CR>", opts)
+
+keymap("n", "<leader>L", ":Lazy<CR>", opts)
+keymap("n", "<leader>N", ":NullLsInfo<CR>", opts)
+keymap("n", "<leader>M", ":Mason<CR>", opts)

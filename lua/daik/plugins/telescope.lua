@@ -40,7 +40,7 @@ return {
 		{"<leader>fvo", ":Telescope vim_options <CR>", desc = "Vim options", mode = "n", silent = true},
 		{"<leader>fds", ":Telescope diagnostics <CR>", desc = "Diagnostics", mode = "n", silent = true},
 		{"<leader>fcs", ":Telescope colorscheme <CR>", desc = "Colorscheme", mode = "n", silent = true},
-		
+
 		{"<leader>lr", ":Telescope lsp_references <CR>", desc = "lsp references", mode = "n", silent = true},
 		{"<leader>tb", ":Telescope builtin <CR>", desc = "builtin opstions", mode = "n", silent = true},
 

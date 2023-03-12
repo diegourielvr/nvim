@@ -185,7 +185,7 @@ return { 'nvim-lualine/lualine.nvim',
 			end
 			local buf_ft = vim.bo.filetype
 			local buf_client_names = {}
-			local copilot_active = false
+			-- local copilot_active = false
 			local null_ls = require("null-ls")
 			local alternative_methods = {
 				null_ls.methods.DIAGNOSTICS,

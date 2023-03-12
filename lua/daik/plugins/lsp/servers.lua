@@ -4,6 +4,6 @@ M.servers = {
 	"pyright",
 	"clangd",
 	"vimls",
-	"marksman",
+	-- "marksman",
 }
 return M
