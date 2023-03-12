@@ -10,13 +10,23 @@ return {
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,
+					-- ["config.lsp.signature.enabled"] = false
+				},
+				signature = { -- deshabilitar ayuda de parametros de funciones (choca con lsp_signature help). No se mantiene abierta la ventana con noice, con lsp_signature si
+					enabled = false,
+					auto_open = {
+						enabled = false,
+						trigger = false, -- Automatically show signature help when typing a trigger character from the LSP
+						luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
+						throttle = 50, -- Debounce lsp signature help request by 50ms
+					},
 				},
 			},
 			presets = {
 				bottom_search = true, -- use a classic bottom cmdline for search
 				command_palette = true,
 				long_message_to_split = true,
-				lsp_doc_border = false, -- add a border to hover docs and signature help
+				lsp_doc_border = true, -- add a border to hover docs and signature help
 			},
 			cmdline = {
 				format = {

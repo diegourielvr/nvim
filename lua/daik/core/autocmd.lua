@@ -15,6 +15,7 @@ function transparentScheme()
 	-- vim.cmd "hi NvimTreeNormalNC guibg=NONE"
 	-- vim.cmd "hi BufferInactive guibg=NONE"
 end
+
 -- transparentScheme()
 --
 -- vim.api.nvim_create_autocmd("ColorScheme", {

@@ -6,6 +6,7 @@ return {
 	{ import = "daik.plugins.lsp.lsp"}, -- (2)
 	{ import = "daik.plugins.lsp.null-ls"},
 	{ import = "daik.plugins.lsp.lspsaga"},
+	{ import = "daik.plugins.lsp.lsp_signature"},
 	{
 		"echasnovski/mini.pairs", -- Autocompletar llaves {} '' "" [] 
 		event = "VeryLazy",
@@ -19,4 +20,5 @@ return {
 			{"<leader>ma", ":MaximizerToggle<CR>", desc = "Maximizar ventana", mode = "n", silent = true},
 		}
 	},
+	-- "kevinhwang91/nvim-ufo"
 }

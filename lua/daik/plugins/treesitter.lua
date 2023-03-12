@@ -1,51 +1,53 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter", -- Analizadores sintácticos con diferentes modulos para resaltado, identación, llaves, etc. Blankline usa la interfaz para identación
+		version = false, -- last release is way too old and doesn't work on Windows
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			-- Linea importante para ventana flotante de LSPSaga
 			--require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
-			require('nvim-treesitter').setup({
+			require('nvim-treesitter.configs').setup({
 				-- Lista de nombres de analizadores sintácticos a instalar
 				-- Lista de nombres de analizadores aceptados: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 				ensure_installed = {
 					"lua",
 					"markdown",
 					"python",
+					-- "bash",
 					"c",
 					"cpp",
 					"java",
 					"vim",
-					"regex",
+					-- "regex",
 					"markdown_inline",
-					"json",
-					"php"
+					-- "tree-sitter-query",
+
 				},
 				-- Automatically install missing parsers when entering buffer
 				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 				auto_install = true,
 				sync_install = true,
 				-- Lista de analizadores a ignorar enla instalacion (solo si ensura_installed = "all")
-				ignore_install = {
-					"phpdoc",
-				},
+				-- ignore_install = {
+				-- 	"phpdoc", 
+				-- },
 				-- Resaltado
 				highlight = {
 					enable = true,
 					-- Lista de analizadores (parser) que seran deshabilitados
-					disable = {
-						"css", "vim"
-					}
+					-- disable = {
+					-- 	"css", "vim", 
+					-- }
 				},
 				autopairs = {
 					enable = true,
 				},
 				indent = {
 					enable = true,
-					disable = {
-						"css",
-					}
+					-- disable = {
+					-- 	"css",
+					-- }
 				},
 				incremental_selection = {
                 	enable = true,

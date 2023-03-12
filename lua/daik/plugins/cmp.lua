@@ -40,7 +40,7 @@ return {
 		"rafamadriz/friendly-snippets", -- contiene los snippets: https://github.com/rafamadriz/friendly-snippets/wiki
 		'hrsh7th/cmp-nvim-lua', -- lua lsp
     	'hrsh7th/cmp-nvim-lsp', -- language-server-based completions
-		"hrsh7th/cmp-nvim-lsp-signature-help",
+		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
 		local cmp = require('cmp')
@@ -59,7 +59,7 @@ return {
 			},
 			sources = { -- Source enable
 			    { name = "nvim_lsp"}, -- SLP
-				{ name = 'nvim_lsp_signature_help' },
+				-- { name = 'nvim_lsp_signature_help' },
 			    { name = "luasnip"}, -- LuaSnip
 				{ name = "buffer" },
 				{ name = "calc" },
@@ -86,14 +86,16 @@ return {
 				end,
 			},
 			window = { -- Estilo de ventana del autocompletado y de la documentación del item seleccionado 
-				completion = { -- Estilo del autocompletado
-					border = "rounded", -- Estilo de borde 
-					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", -- Colores de la ventana
-				},
-				documentation = { -- Estilo de la documentacion del texto autocompletado
-					border = "rounded",
-					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-				},
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+				-- completion = { -- Estilo del autocompletado
+				-- 	border = "rounded", -- Estilo de borde 
+				-- 	winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", -- Colores de la ventana
+				-- },
+				-- documentation = { -- Estilo de la documentacion del texto autocompletado
+				-- 	border = "rounded",
+				-- 	winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+				-- },
 			},
 			experimental = {
 				ghost_text = true,

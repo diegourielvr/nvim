@@ -24,12 +24,27 @@ local on_attach = function(client, bufnr)
 	-- vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next({buffer=0}), bufopts)
 	-- vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev({buffer=0}), bufopts)
 	-- Informacion de la funcion
-	-- vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, bufopts)
 
 	-- local navic = require ('nvim-navic')
 	-- if client.server_capabilities.documentSymbolProvider then
 	-- 	navic.attach(client, bufnr)
 	-- end
+	-- local signature_opts = {
+	-- 	bind = true, -- This is mandatory, otherwise border config won't get registered.
+	-- 	close_timeout = 1000,                   -- close floating window after ms when laster parameter is entered
+	-- 	fix_pos = false,                        -- set to true, the floating window will not auto-close until finish all parameters
+	-- 	hint_enable = true,                     -- virtual hint enable
+	-- 	hint_prefix = "🐼 ",                  -- Panda for parameter, NOTE: for the terminal not support emoji, might crash
+	-- 	hint_scheme = "String",
+	-- 	hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
+	-- 	handler_opts = {
+	-- 		border = "rounded"
+	-- 	}
+	-- }
+	-- local cmp = require("cmp")
+	-- local lsp_signature = require("lsp_signature")
+	-- lsp_signature.on_attach(signature_opts, bufnr)
 end
 
 local configDiagnostic = function()
@@ -75,6 +90,21 @@ local configDiagnostic = function()
 	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 	-- 	border = "rounded",
 	-- })
+	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+	-- 	vim.lsp.handlers.hover, {
+	-- 		-- Use a sharp border with `FloatBorder` highlights
+	-- 		border = "rounded",
+	-- 		-- add the title in hover float window
+	-- 		title = "hover"
+	-- 	}
+	-- )
+	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+	-- 	vim.lsp.handlers.signature_help, {
+	-- 		-- Use a sharp border with `FloatBorder` highlights
+	-- 		border = "rounded",
+	-- 		title = "signature_help"
+	-- 	}
+	-- )
 end
 
 return {
