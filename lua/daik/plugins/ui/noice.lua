@@ -13,13 +13,16 @@ return {
 					-- ["config.lsp.signature.enabled"] = false
 				},
 				signature = { -- deshabilitar ayuda de parametros de funciones (choca con lsp_signature help). No se mantiene abierta la ventana con noice, con lsp_signature si
-					enabled = false,
+					enabled = false, -- Mostrar campos requeridos de una función
 					auto_open = {
 						enabled = false,
 						trigger = false, -- Automatically show signature help when typing a trigger character from the LSP
 						luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
 						throttle = 50, -- Debounce lsp signature help request by 50ms
 					},
+				},
+				progress = {
+					enabled = false, -- disable lsp_progress Message
 				},
 			},
 			presets = {
@@ -30,7 +33,7 @@ return {
 			},
 			cmdline = {
 				format = {
-					cmdline = { pattern = "^:", icon = "", lang = "vim" },
+					cmdline = { pattern = "^:", icon = "", lang = "vim" },
 					search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
 					search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
 				}

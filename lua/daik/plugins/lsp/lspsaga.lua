@@ -45,6 +45,9 @@ return {
 				-- },
 				-- kind = {},
 			},
+			diagnostic = {
+				on_insert = false, -- deshabilitar diagnosticos en la esquina superior derecha
+			},
 			finder = {
 				--percentage
 				-- max_height = 0.5,
@@ -81,8 +84,8 @@ return {
 		{ "<leader>lh",  "<cmd>Lspsaga hover_doc<CR>",                  mode = "n",          silent = true },
 
 		-- Diagnostic jump can use `<c-o>` to jump back
-		{ "<c-k>",       "<cmd>Lspsaga diagnostic_jump_prev<CR>",       mode = "n",          silent = true },
-		{ "<c-j>",       "<cmd>Lspsaga diagnostic_jump_next<CR>",       mode = "n",          silent = true },
+		{ "<leader>lp",       "<cmd>Lspsaga diagnostic_jump_prev<CR>",       mode = "n",          silent = true },
+		{ "<leader>ln",       "<cmd>Lspsaga diagnostic_jump_next<CR>",       mode = "n",          silent = true },
 
 		-- Only jump to error
 		-- {"[E", function()

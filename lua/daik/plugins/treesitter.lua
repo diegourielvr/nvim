@@ -27,7 +27,7 @@ return {
 				-- Automatically install missing parsers when entering buffer
 				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 				auto_install = true,
-				sync_install = true,
+				sync_install = false,
 				-- Lista de analizadores a ignorar enla instalacion (solo si ensura_installed = "all")
 				-- ignore_install = {
 				-- 	"phpdoc", 

@@ -30,21 +30,7 @@ local on_attach = function(client, bufnr)
 	-- if client.server_capabilities.documentSymbolProvider then
 	-- 	navic.attach(client, bufnr)
 	-- end
-	-- local signature_opts = {
-	-- 	bind = true, -- This is mandatory, otherwise border config won't get registered.
-	-- 	close_timeout = 1000,                   -- close floating window after ms when laster parameter is entered
-	-- 	fix_pos = false,                        -- set to true, the floating window will not auto-close until finish all parameters
-	-- 	hint_enable = true,                     -- virtual hint enable
-	-- 	hint_prefix = "🐼 ",                  -- Panda for parameter, NOTE: for the terminal not support emoji, might crash
-	-- 	hint_scheme = "String",
-	-- 	hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
-	-- 	handler_opts = {
-	-- 		border = "rounded"
-	-- 	}
-	-- }
 	-- local cmp = require("cmp")
-	-- local lsp_signature = require("lsp_signature")
-	-- lsp_signature.on_attach(signature_opts, bufnr)
 end
 
 local configDiagnostic = function()
@@ -62,7 +48,7 @@ local configDiagnostic = function()
 	-- Configuracio´n de diagnosticos en: https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.config()
 	local config = {
 		-- virtual_text = true, -- Mostrar diagnostico al final de la linea
-		virtual_text = { spacing = 4, prefix = "" },
+		virtual_text = { spacing = 4, prefix = "󰗝" },
 		signs = {
 			active = signs, -- show signs
 		},
@@ -82,29 +68,15 @@ local configDiagnostic = function()
 		},
 	}
 	vim.diagnostic.config(config)
-
+	-- Configuración de algunas opciones que brinda lsp como hover, signaturehelp
+	-- Lsp saga sobre escribe la siguiente instrucción
 	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	-- 	border = "rounded",
 	-- })
-	--
+	-- Lsp_signature sobreescribe la siguiente instrucción 
 	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 	-- 	border = "rounded",
 	-- })
-	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-	-- 	vim.lsp.handlers.hover, {
-	-- 		-- Use a sharp border with `FloatBorder` highlights
-	-- 		border = "rounded",
-	-- 		-- add the title in hover float window
-	-- 		title = "hover"
-	-- 	}
-	-- )
-	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-	-- 	vim.lsp.handlers.signature_help, {
-	-- 		-- Use a sharp border with `FloatBorder` highlights
-	-- 		border = "rounded",
-	-- 		title = "signature_help"
-	-- 	}
-	-- )
 end
 
 return {
@@ -114,27 +86,19 @@ return {
 		configDiagnostic()
 		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-		local opts = {}
 
+		local opts = {}
 		opts = {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
-
 		for _, server in pairs(servers) do
-			-- local require_ok, conf_opts = pcall(require, "daik.plugins.lsp.settings." .. server)
-			-- if require_ok then
-			-- 	opts = vim.tbl_deep_extend("force", conf_opts, opts)
-			-- end
+			local require_ok, conf_opts = pcall(require, "daik.plugins.lsp.settings." .. server)
+			if require_ok then
+				-- vim.tbl_deep_extend es la causa que muestra la Configuracion de lsp en la parte inferior derecha
+				opts = vim.tbl_deep_extend("force", conf_opts, opts)
+			end
 			lspconfig[server].setup(opts)
 		end
 	end,
 }
-
--- for _, server in pairs(servers) do
--- local require_ok, conf_opts = pcall(require, "daik.plugins.lsp.settings." .. server)
--- if require_ok then
--- 	opts = vim.tbl_deep_extend("force", conf_opts, opts)
--- end
--- lspconfig[server].setup(opts)
--- end

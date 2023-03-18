@@ -3,36 +3,33 @@ return { 'nvim-lualine/lualine.nvim',
 	config = function()
 		local MODES = {
 			-- BUFFERS = colors.teal,
-			['i'] = { '    ', "#42D0FF" }, -- Insert (INSERT)
-			['n'] = { '    ', "#81FFC6" }, -- Normal (NORMAL)
-			['v'] = { '    ', "#EE81FF" }, -- Visual (VISUAL)
-			['R'] = { '    ', "#FF8989" }, -- Replace
-			['c'] = { '󰚈󰚈󰚈󰚈', "#ffcc00" }, -- command-line
-			['ce'] = { 'NORMAL EX', "#ffcc00" },
-			['cv'] = { 'EX', "#ffcc00" },
-			['ic'] = { 'INS-COMPLETE', "#ffcc00" },
-			['no'] = { 'OPERATOR-PENDING', "#ffcc00" }, -- d, y, c
-			['r'] = { 'HIT-ENTER', "#ffcc00" },
-			['r?'] = { ':CONFIRM', "#ffcc00" },
-			['rm'] = { '--MORE', "#ffcc00" },
-			['Rv'] = { '󰚈󰚈󰚈󰚈', "#ffcc00" }, -- gR virtual
-			['s'] = { '󰚈󰚈󰚈󰚈', "#ffcc00" }, --gh select
-			['S'] = { 'SELECT LINE', "#ffcc00" }, --gH
-			['␓'] = { 'SELECT BLOCK', "#ffcc00" },
-			['t'] = { 'TERMINAL', "#ffcc00" },
-			['V'] = { 'VISUAL LINE', "#ffcc00" }, -- Visual Line (VISUAL-LINE)
-			['␖'] = { 'VISUAL BLOCK', "#ffcc00" },
-			['!'] = { 'SHELL', "#ffcc00" },
+			['c']  = {'    '      		  }, -- Command line (COMMAND-LINE)
+			['ce'] = {'NORMAL EX'         },
+			['cv'] = {'EX'                },
+			['i']  = {'    '           	  }, -- Insert (INSERT)
+			['ic'] = {'INS-COMPLETE'      },
+			['n']  = {'    '           	  }, -- Normal (NORMAL)
+			['no'] = {'OPERATOR-PENDING'  },
+			['r']  = {'HIT-ENTER'         },
+			['r?'] = {':CONFIRM'          },
+			['rm'] = {'--MORE'            },
+			['R']  = {'REPLACE'           },
+			['Rv'] = {'VIRTUAL'           },
+			['s']  = {'SELECT'            },
+			['S']  = {'SELECT'            },
+			['␓']  = {'SELECT'            },
+			['t']  = {'TERMINAL'          },
+			['v']  = {'    '              }, -- Visual (VISUAL) 
+			['V']  = {'    '       		  }, -- Visual Line (VISUAL-LINE)
+			['␖']  = {'VISUAL BLOCK'      },
+			['!']  = {'SHELL'             },
 		}
 
 		local custom_icons = {
 			function()
 				return ""
 			end,
-			-- color = function()
-			-- 	return { fg = MODES[vim.g.libmodalActiveModeName] or MODES[vim.api.nvim_get_mode().mode][2], bg = "NONE" }
-			-- end,
-			separator = { left = "", right = " " },
+			separator = { left = "", right = "" },
 		}
 
 		local modes = {
@@ -40,40 +37,40 @@ return { 'nvim-lualine/lualine.nvim',
 			function()
 				return vim.g.libmodalActiveModeName or MODES[vim.api.nvim_get_mode().mode][1]
 			end,
-			separator = { left = "", right = " " },
-			-- color = function()
-			-- 	return { fg = MODES[vim.g.libmodalActiveModeName] or MODES[vim.api.nvim_get_mode().mode][2], bg = "NONE" }
-			-- end,
+			separator = { left = "", right = "" },
+			-- padding = 0.8,
 		}
+
 
 		local filetype_icon = {
 			"filetype",
 			icon_only = true,
 			colored = true,
 			padding = 1,
+			-- color = { bg = "#2a2c3f" },
 			color = { bg = "NONE" },
+			-- separator = { left = "", right = " " },
 		}
 
 		local filename = {
 			"filename",
 			file_status = true,
-			path = 1, -- 0: just filename, 1: relative path, 2: absolute path, 3
-			-- padding = 0.3,
+			path = 0, -- 0: just filename, 1: relative path, 2: absolute path, 3
+			padding = 0.3,
 			-- separator = { left = "", right = " " },
 			-- color = { bg = "#2a2c3f" },
 			color = { bg = "NONE" },
 			symbols = {
-				modified = '󰚀',
+				modified = '●',
 			}
 		}
 
 		local branch = {
 			"branch",
 			icon = "",
-			color = {fg = "#8FCDA9", bg="NONE"},
-			-- color = {bg = "#8FCDA9", fg = "#121319"},
-			-- separator = { left = "", right = "" },
-  			padding = 1, -- espacio a los lados
+			color = {bg = "#8FCDA9", fg = "#121319"},
+			separator = { left = "", right = "" },
+  			padding = 0.1,
 		}
 
 		local diff = {
@@ -131,19 +128,22 @@ return { 'nvim-lualine/lualine.nvim',
 
 		local os = {
 			'fileformat',
-			color = { fg = "#8BC6FC", bg = "NONE" },
-			-- color = { bg = "#8BC6FC", fg = "#121319" },
+			separator = { left = "", right = "" },
+			color = { bg = "#8BC6FC", fg = "#121319" },
+			padding = 0.3,
 		}
 
 		local encoding = {
-			"encoding",
+			"encoding"
 		}
 
 		local indent_icon = {
 			function()
 				return ""
 			end,
-			color = { fg = "#ECD3A0", bg = "NONE" },
+			separator = { left = "", right = "" },
+			color = { bg = "#ECD3A0", fg = "#121319" },
+			padding = 0.3,
 		}
 
 		local indent = function()
@@ -154,9 +154,9 @@ return { 'nvim-lualine/lualine.nvim',
 			function()
 				return ""
 			end,
+			separator = { left = "", right = "" },
 			-- color = { bg = "#85A1F2", fg = "#000000" },
-			-- color = { bg = "#FD7C6E", fg = "#121319" },
-			color = { fg = "#FD7C6E", bg = "NONE" },
+			color = { bg = "#FD7C6E", fg = "#121319" },
 			padding = 0.1,
 		}
 
@@ -273,8 +273,10 @@ return { 'nvim-lualine/lualine.nvim',
 				lualine_b = { --test
 				},
 				lualine_c = {
+      				spaces,
 					filetype_icon,
 					filename,
+					spaces,
 					branch,
 					diff,
 					-- fun,
@@ -284,9 +286,10 @@ return { 'nvim-lualine/lualine.nvim',
 					diagnostics,
 					{
 						lsp_progess,
-						color = {fg = "#75e9e5", bg = "NONE"},
-						-- color = {bg = "#75e9e5", fg = "#121319"},
+						color = {bg = "#75e9e5", fg = "#121319"},
+						separator = { left = "", right = "" },
 					},
+					spaces,
 					filetype,
 					os,
 					encoding,
@@ -324,8 +327,7 @@ return { 'nvim-lualine/lualine.nvim',
 			-- 	lualine_z = {'fileformat'}
 			-- },
 		})
-		vim.cmd "highlight! link StatusLine Normal"
-		vim.cmd "highlight! link StatusLineNC Normal"
+		vim.cmd "highlight lualine_a_normal guibg='NONE'"
 		vim.cmd "highlight lualine_c_normal guibg='NONE'"
 		vim.cmd "highlight lualine_c_visual guibg='NONE'"
 		vim.cmd "highlight lualine_c_insert guibg='NONE'"

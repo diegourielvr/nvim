@@ -43,3 +43,7 @@ keymap("n", "<leader>T", ":lua transparentScheme()<CR>", opts)
 keymap("n", "<leader>L", ":Lazy<CR>", opts)
 keymap("n", "<leader>N", ":NullLsInfo<CR>", opts)
 keymap("n", "<leader>M", ":Mason<CR>", opts)
+-- Cuando movemos el mouse en la terminal, esta se sale del modo insertar en terminal
+keymap("n", "<leader>ht", "<cmd>split<CR> <cmd>terminal powershell.exe<CR>", opts)
+keymap("n", "<leader>vt", "<cmd>vsplit<CR> <cmd>terminal powershell.exe<CR>", opts)
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
