@@ -1,5 +1,6 @@
 local M = {}
 M.servers = {
+	"bashls",
 	"lua_ls",
 	"pyright",
 	"clangd",

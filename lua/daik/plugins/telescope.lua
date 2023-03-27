@@ -11,7 +11,7 @@ return {
 			defaults = {
 				layout_config = { prompt_position = "top" },
 				sorting_strategy = "ascending",
-				prompt_prefix = "  ",
+				prompt_prefix = " ",
 				selection_caret = " ",
 				path_display = { "smart" },
 			}
@@ -21,7 +21,7 @@ return {
 
 	end,
 	keys = {
-		-- Para más casos de uso ver: https://github.com/nvim-telescope/telescope.nvim#pickers
+		-- Para mÃ¡s casos de uso ver: https://github.com/nvim-telescope/telescope.nvim#pickers
 		{"<leader>t", ":Telescope<CR>", desc = "Mostrar incorporacines", mode = "n", silent = true},
 		{"<leader>ff", ":Telescope find_files<CR>", desc = "Find Files", mode = "n", silent = true},
 		{"<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers", mode = "n", silent = true},
@@ -47,10 +47,9 @@ return {
 	},
 }
 
---[[ <t_��>ý v:lua.cmp.utils.feedkeys.call.run(3)
 --.
 	-- Comandos para moverse en Telescope
-	https://github.com/nvim-telescope/telescope.nvim#default-mappings
+	--[[ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 	Mappings		Action
 	<C-n>/<Down>	Next item <C-p>/<Up>	Previous item
 	j/k				Next/previous (in normal mode)
@@ -88,5 +87,4 @@ return {
 	<C-h>/h			toggle_hidden		Toggle hidden files/folders
 	<C-s>/s			toggle_all			Toggle all entries ignoring ./ and ../
 	<Tab>			see telescope.nvim	Toggle selection and move to next selection
-	<S-Tab>			see telescope.nvim	Toggle selection and move to prev selection
-]]--
+	<S-Tab>			see telescope.nvim	Toggle selection and move to prev selection ]]

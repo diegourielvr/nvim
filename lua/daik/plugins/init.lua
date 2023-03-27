@@ -1,6 +1,7 @@
 return {
 	{ import = "daik.plugins.git"},
 	{ import = "daik.plugins.ui"},
+	{ import = "daik.plugins.mini"},
 	-- Es necesario colocar en el siguiente orden los plugins de mson y lspconfig
 	{ import = "daik.plugins.lsp.mason"}, -- (1)
 	{ import = "daik.plugins.lsp.lsp"}, -- (2)

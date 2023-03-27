@@ -29,9 +29,6 @@ return { 'nvim-lualine/lualine.nvim',
 			function()
 				return ""
 			end,
-			-- color = function()
-			-- 	return { fg = MODES[vim.g.libmodalActiveModeName] or MODES[vim.api.nvim_get_mode().mode][2], bg = "NONE" }
-			-- end,
 			separator = { left = "", right = " " },
 		}
 
@@ -50,21 +47,28 @@ return { 'nvim-lualine/lualine.nvim',
 			"filetype",
 			icon_only = true,
 			colored = true,
-			padding = 1,
 			color = { bg = "NONE" },
 		}
 
 		local filename = {
 			"filename",
-			file_status = true,
+			file_status = false,
 			path = 1, -- 0: just filename, 1: relative path, 2: absolute path, 3
-			-- padding = 0.3,
-			-- separator = { left = "", right = " " },
-			-- color = { bg = "#2a2c3f" },
 			color = { bg = "NONE" },
-			symbols = {
-				modified = '󰚀',
-			}
+			-- symbols = {
+			-- 	modified = '󰚀',
+			-- }
+		}
+
+		local filestatus = {
+			function ()
+				if vim.bo.modified then
+					return "󰸊"
+				else
+					return "󰖌"
+				end
+			end,
+			color = { fg = "#00ffcc", bg = "NONE" },
 		}
 
 		local branch = {
@@ -172,7 +176,6 @@ return { 'nvim-lualine/lualine.nvim',
 			return vim.fn.winwidth(0) > 80
 		end
 
-
 		local lsp_progess = function()
 			msg = msg or "LS Inactive"
 			local buf_clients = vim.lsp.buf_get_clients()
@@ -237,7 +240,7 @@ return { 'nvim-lualine/lualine.nvim',
 			vim.list_extend(buf_client_names, supported_linters)
 			local unique_client_names = vim.fn.uniq(buf_client_names)
 
-			local language_servers = " " .. table.concat(unique_client_names, ", ") .. ""
+			local language_servers = "󰅩 " .. table.concat(unique_client_names, ", ") .. ""
 			-- local language_servers = " " .. table.concat(unique_client_names, ", ") .. ""
 
 			-- if copilot_active then
@@ -275,6 +278,7 @@ return { 'nvim-lualine/lualine.nvim',
 				lualine_c = {
 					filetype_icon,
 					filename,
+					filestatus,
 					branch,
 					diff,
 					-- fun,
@@ -285,7 +289,6 @@ return { 'nvim-lualine/lualine.nvim',
 					{
 						lsp_progess,
 						color = {fg = "#75e9e5", bg = "NONE"},
-						-- color = {bg = "#75e9e5", fg = "#121319"},
 					},
 					filetype,
 					os,
@@ -324,8 +327,9 @@ return { 'nvim-lualine/lualine.nvim',
 			-- 	lualine_z = {'fileformat'}
 			-- },
 		})
+
 		vim.cmd "highlight! link StatusLine Normal"
-		vim.cmd "highlight! link StatusLineNC Normal"
+		-- vim.cmd "highlight! link StatusLineNC Normal"
 		vim.cmd "highlight lualine_c_normal guibg='NONE'"
 		vim.cmd "highlight lualine_c_visual guibg='NONE'"
 		vim.cmd "highlight lualine_c_insert guibg='NONE'"

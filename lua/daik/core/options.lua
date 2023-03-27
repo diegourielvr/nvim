@@ -1,7 +1,7 @@
 local options = {
     -- General
     background = 'dark',
-	fillchars="eob: ",								-- Pcultar ~ (tilde de buffer) por espacios
+	fillchars="eob: ",								-- Ocultar ~ (tilde de buffer) por espacios
     timeoutlen = 500,								-- Tiempo de espera para un atajo (milisegundos)
     clipboard = "unnamedplus",						-- Portapapeles del sistema
     conceallevel = 0,								-- '' visible en archivos md
@@ -28,7 +28,9 @@ local options = {
     cmdheight = 1,									-- Número de lineas para linea de comandos (def: 1)		
     -- Archivos
     confirm = true,									-- Guardar cambios antes de cerrar un buffer modificado
-    fileencoding = "utf-8",
+    encoding = "UTF-8",
+    fileencoding = "UTF-8",
+    -- fileencodings = "UTF-8",
     swapfile = false,
 	undofile = true,								-- Guardar automaticamente un historial de deshacer
 	updatetime = 10000,
@@ -38,7 +40,7 @@ local options = {
     -- Resaltar posicion del cursor	
     cursorcolumn = false,							-- Habiliutar resaltado de columna
     cursorline = true,								-- Habilitar resaltado de linea
-    cursorlineopt = {"number"},						-- (cursorline debe estar activado), "number": resasltar número de linea, "line": resaltar texto 
+    cursorlineopt = {"number", "line"},						-- (cursorline debe estar activado), "number": resasltar número de linea, "line": resaltar texto 
     ruler = true,									-- Número de linea y columna de la posición del cursor	
     -- Busqueda y resaltado (/, ?)
     hlsearch = true,								-- Mantener resaltado de coincidencias (:nohlsearch -> desmarcar resaltado)

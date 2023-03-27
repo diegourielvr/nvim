@@ -3,6 +3,7 @@
   "LuaSnip": { "branch": "master", "commit": "436857749a905b48c1e8205b996639c28f006556" },
   "alpha-nvim": { "branch": "main", "commit": "4e1c4dedf5983e84b3ed305228b2235c56c7023c" },
   "bufferline.nvim": { "branch": "main", "commit": "3677aceb9a72630b0613e56516c8f7151b86f95c" },
+  "calvera-dark.nvim": { "branch": "main", "commit": "84802d0bde047ce79ebfddc1800800f0bd67f37a" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-calc": { "branch": "main", "commit": "50792f34a628ea6eb31d2c90e8df174671e4e7a0" },
   "cmp-greek": { "branch": "main", "commit": "799110b976f9194055e9d506931ac38171bc6bcd" },
@@ -19,6 +20,7 @@
   "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a81503f0019942111fe464209237f8b4e85f4687" },
   "mason.nvim": { "branch": "main", "commit": "698cd0c4f10480991e665f31977650858d625af1" },
+  "mini.animate": { "branch": "main", "commit": "7c4c51a63b6915d16193d5c62eb72620f746e07b" },
   "mini.indentscope": { "branch": "main", "commit": "7998edc970610c05598c7aea3d21ece8dd87ed52" },
   "mini.pairs": { "branch": "main", "commit": "0256717c9364ad6b5384c37b4f96fb4f7cc74867" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
@@ -35,7 +37,6 @@
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "94fe37a1ea217dd2f90d91222bc1531521146ac3" },
   "telescope.nvim": { "branch": "master", "commit": "a3f17d3baf70df58b9d3544ea30abe52a7a832c2" },
-  "tokyonight.nvim": { "branch": "main", "commit": "467d889ba82a74e26821c812aa8e70d7dff04c6c" },
   "tree-sitter-markdown": { "branch": "split_parser", "commit": "fa6bfd51727e4bef99f7eec5f43947f73d64ea7d" },
   "vim-illuminate": { "branch": "master", "commit": "49062ab1dd8fec91833a69f0a1344223dd59d643" },
   "vim-maximizer": { "branch": "master", "commit": "2e54952fe91e140a2e69f35f22131219fcd9c5f1" }
