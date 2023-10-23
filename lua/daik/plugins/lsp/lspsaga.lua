@@ -1,3 +1,4 @@
+-- Este pluggin muestra "code context" en la winbar
 return {
 	-- LspSaga brinda comandos para lsp mostrados en una ventana flotante
 	"glepnir/lspsaga.nvim",
@@ -45,6 +46,17 @@ return {
 				-- },
 				-- kind = {},
 			},
+			symbol_in_winbar = { -- Modificar el estilo de la winbar
+				enable = true,
+				ignore_patterns = {},
+				separator = '  ',
+				-- separator = '  ',
+				hide_keyword = true,
+				show_file = true,
+				folder_level = 2, -- número de folers anteriores a mostrar
+				respect_root = false,
+				color_mode = false, -- Habilitar coloreado de palabras en winbar
+			},
 			diagnostic = {
 				on_insert = false, -- deshabilitar diagnosticos en la esquina superior derecha
 			},
@@ -64,6 +76,7 @@ return {
 				},
 			},
 		})
+		vim.cmd "hi SagaWinbarSep guifg=#d1d4cf" -- Color del separador de winbar
 	end,
 	keys = {
 		-- References and definition

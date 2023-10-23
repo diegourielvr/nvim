@@ -7,13 +7,25 @@ function transparentScheme()
 	vim.cmd "hi LazyNormal guibg=NONE"
 	vim.cmd "hi TelescopeNormal guibg=NONE"
 	vim.cmd "hi TelescopeBorder guibg=NONE"
-	vim.cmd "hi BufferlineFill guibg=NONE"
 	vim.cmd "hi SagaNormal guibg=NONE"
 	vim.cmd "hi SagaBorder guibg=NONE"
 	vim.cmd "hi NormalSB guibg=NONE"
 	vim.cmd "hi TroubleNormal guibg=NONE"
-	-- vim.cmd "hi NvimTreeNormalNC guibg=NONE"
+	-- Winbar
+	vim.cmd "hi WinBar guibg=NONE"
+
+	-- Plugin Barbar
+	vim.cmd "hi BufferTabpageFill guibg=NONE" -- Fondo de barra de buffers
+	vim.cmd "hi BufferInactive guibg=NONE" -- Fondo de buffers inactivos
+	vim.cmd "hi BufferInactiveSign guibg=NONE" -- Fondo de separador de buffers inactivos
+	vim.cmd "hi BufferVisibleSign guibg=NONE" -- Fondo de separador de buffers visibles (ventanas verticales u horizontales)
+	vim.cmd "hi BufferVisible guibg=NONE" -- Fondo de separador de buffers visibles (ventanas verticales u horizontales)
+
+	-- Plugin bufferLine
+	-- vim.cmd "hi BufferlineFill guibg=NONE"
 	-- vim.cmd "hi BufferInactive guibg=NONE"
+
+	-- vim.cmd "hi NvimTreeNormalNC guibg=NONE"
 end
 
 -- transparentScheme()

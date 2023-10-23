@@ -63,9 +63,9 @@ return { 'nvim-lualine/lualine.nvim',
 		local filestatus = {
 			function ()
 				if vim.bo.modified then
-					return "󰸊"
+					return ""
 				else
-					return "󰖌"
+					return ""
 				end
 			end,
 			color = { fg = "#00ffcc", bg = "NONE" },
@@ -114,6 +114,7 @@ return { 'nvim-lualine/lualine.nvim',
 				"error",
 				"warn",
 				"hint",
+				"info"
 			},
 			symbols = {
 				error = " ",

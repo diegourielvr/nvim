@@ -48,7 +48,7 @@ local configDiagnostic = function()
 	-- Configuracio´n de diagnosticos en: https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.config()
 	local config = {
 		-- virtual_text = true, -- Mostrar diagnostico al final de la linea
-		virtual_text = { spacing = 4, prefix = "󰗝" },
+		virtual_text = { spacing = 4, prefix = "󰪥" },
 		signs = {
 			active = signs, -- show signs
 		},
