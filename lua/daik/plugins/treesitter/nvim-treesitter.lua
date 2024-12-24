@@ -34,8 +34,8 @@ return {
 			"jsonc",
 			"lua",
 			"luadoc",
-			-- "markdown",
-			-- "markdown_inline",
+			"markdown",
+			"markdown_inline",
 			"python",
 			-- "query",
 			-- "toml",
@@ -50,20 +50,13 @@ return {
 			--"julia",
 			--"go",
 		},
-		-- Modules
-		
-		-- Consistent syntax highlighting.
 		highlight = { -- Consistent syntax highlighting.
 			enable = true
 		},
-
-		-- ndentation based on treesitter for the = operator. Experimental feature
-		indent = { -- ndentation based on treesitter for the = operator. Experimental feature
+		indent = { -- indentation based on treesitter for the = operator. Experimental feature
 			enable = true
 		},
-
-		-- Incremental selection based on the named nodes from the grammar.
-		incremental_selection = {
+		incremental_selection = { -- Incremental selection based on the named nodes from the grammar.
 			enable = true,
 			keymaps = {
 				-- init_selection = "<C-space>",
