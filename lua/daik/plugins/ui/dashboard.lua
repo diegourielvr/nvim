@@ -2,7 +2,7 @@ return {
 	'nvimdev/dashboard-nvim',
 	event = 'VimEnter',
 	opts = {
-		theme = 'doom', --  theme is doom and hyper default is hyper
+		theme = 'doom', --  'doom' | 'hyper'
 		hide = {
 			statusline = true, -- hide statusline default is true
 			tabline = true, -- hide the tabline
@@ -22,7 +22,7 @@ return {
 				"                            ",
 			},
 			center = {
-				{ action = ":Telescope find_files", desc = " File files", icon = " ", key = "f" },
+				{ action = ":Telescope find_files", desc = " File files			   ", icon = " ", key = "f" },
 				{ action = ":Telescope oldfiles",	desc = " Recent files          ", icon = " ", key = "r" },
 				{ action = ":Telescope live_grep",	desc = " Find text             ", icon = " ", key = "g" },
 				{ action = ":e $MYVIMRC",			desc = " Config                ", icon = " ", key = "c" },
