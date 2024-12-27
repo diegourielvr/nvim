@@ -10,7 +10,7 @@ return {
 	-- https://github.com/ibhagwan/fzf-lua/blob/main/OPTIONS.md#buffers-and-files
 	keys = {
 		-- Pickers
-		{ "<leader>E", ":FzfLua files<CR>", silent = true, desc = "Fzf files" },
+		{ "<leader>FE", ":FzfLua files<CR>", silent = true, desc = "Fzf files" },
 		{ "<leader>fzt", ":FzfLua tabs<CR>", silent = true, desc = "Fzf Open buffers in tabs" },
 		{ "<leader>fzbl", ":FzfLua bufferlines<CR>", silent = true, desc = "Fzf open buffers lines" },
 		-- { "<leader>fzb", ":FzfLua buffers<CR>", silent = true, desc = "Fzf open buffers" },

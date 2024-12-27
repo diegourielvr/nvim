@@ -41,7 +41,7 @@ return {
 
 		local branch = {
 			"branch",
-			icon = "",
+			icon = "󰊢", -- '' | '󰊢'
 			color = { fg = "#FE8443", bg = "NONE" },
 			padding = 1, -- espacio a los lados
 		}

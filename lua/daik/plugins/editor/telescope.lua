@@ -19,7 +19,7 @@ return {
 				prompt_position = "bottom", -- "bottom", "top"
 				scroll_speed = 5, -- Number of lines to scroll through the preview
 				mirror = false, -- Flip the location of the results/prompt and preview windows
-				preview_width = 0.6, -- ancho del preview
+				preview_width = 0.5, -- ancho del preview
 				horizontal = { -- configuración de la estrategia horizontal
 					width = 0.8, -- ancho total
 					height = 0.8, -- alto total
