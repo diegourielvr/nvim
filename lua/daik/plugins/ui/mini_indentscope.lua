@@ -25,7 +25,7 @@ return {
 				"alpha",
 				"dashboard",
 				"neo-tree",
-				"NvimTree",
+				-- "NvimTree",
 				"Trouble",
 				"trouble",
 				"lazy",

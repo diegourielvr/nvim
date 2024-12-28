@@ -1,4 +1,4 @@
-local colorscheme = "solarized-osaka" -- 'default' | 'darcula' | 'solarized-osaka' | 'nightfly' 
+local colorscheme = "default" -- 'default' | 'darcula' | 'solarized-osaka' | 'nightfly' 
 
 if colorscheme == 'default' then
 	return {}

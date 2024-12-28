@@ -56,6 +56,10 @@ return {
 		indent = { -- indentation based on treesitter for the = operator. Experimental feature
 			enable = true
 		},
+		autotags = {
+			enable = true,
+			filetype = { 'html', 'xml' }
+		},
 		incremental_selection = { -- Incremental selection based on the named nodes from the grammar.
 			enable = true,
 			keymaps = {

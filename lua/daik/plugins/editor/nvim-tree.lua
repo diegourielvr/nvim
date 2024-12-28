@@ -15,7 +15,7 @@ return {
 		}, -- 'name' | 'case_sensitive' | 'modification_time' | 'extension' | 'suffix' | 'filetype'
 		view = {
 			-- config for no floating window
-			cursorline = true,
+			cursorline = false,
 			side = "left", -- 'left' | 'right'
 			signcolumn = "yes", -- 'yes' | 'auto' | 'no'
 			width = 30,
@@ -71,11 +71,11 @@ return {
 				enable = true, -- Display indent markers when folders are open
 				inline_arrows = true, -- Display folder arrows in the same column as indent marker
 				icons = { -- Icons shown before the file/directory
-					corner = "┗",
-					edge = "┃",
-					item = "┃",
+					corner = "", -- '┗'
+					edge = "",
+					item = "", -- '┃'
 					bottom = "━",
-					none = "┃",
+					none = "",
 				},
 			},
 			-- Configuration options for icons.
@@ -112,8 +112,8 @@ return {
 						-- arrow_open = "",
 						default = "",
 						open = "",
-						empty = "",
-						empty_open = "",
+						empty = "",
+						empty_open = "",
 						symlink = "",
 						symlink_open = "",
 					},

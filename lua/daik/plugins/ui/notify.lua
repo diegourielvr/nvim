@@ -18,7 +18,7 @@ return {
 		max_width = function()
 			return math.floor(vim.o.columns * 0.75)
 		end,
-		render = "wrapped-compact", -- "compact", "minimal", "simple", "default", "wrapped-compact"
+		render = "compact", -- "compact", "minimal", "simple", "default", "wrapped-compact"
 		stages = "fade", -- "slide", "fade", "static", "fade_in_slide_out"
 		top_down = true,
 		background_colour = "#121212",

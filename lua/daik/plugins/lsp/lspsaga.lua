@@ -21,7 +21,7 @@ return {
 			imp_sign = '󰳛 ',
 		},
 		symbol_in_winbar = {
-			enable = true,
+			enable = false,
 			separator = " › ",
 			hide_keyword = false,
 			ignore_patterns = nil,

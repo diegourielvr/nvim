@@ -36,7 +36,7 @@ local options = {
 	showtabline = 2, -- Mostrar linea con cada tab
 
 	-- Buffer
-	fillchars 	= "eob: ", -- Cambia '~' por un espacio vacio
+	fillchars 	= "eob: ,vert: ", -- Cambia '~' por un espacio  y lineas verticales entre ventanas
 	list 		= true,
 	listchars	= "tab:  ,trail:󱁐,eol: ,space: ,nbsp:󱁐", -- reemplazar tabs, spaces, etc por otros simbolos
 	matchpairs 	= "(:),{:},[:],<:>,=:;", -- Forma parejas de caracteres. '%' Para saltar entre pares

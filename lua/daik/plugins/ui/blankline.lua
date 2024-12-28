@@ -1,7 +1,7 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
 	main = "ibl",
-	enabled = false,
+	enabled = false, -- habilitar para mostrar indentación en el editor
 	opts = {
 		enabled = true,
 		indent = {
