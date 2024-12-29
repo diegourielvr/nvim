@@ -1,14 +1,17 @@
 return {
 	'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	event = "VeryLazy",
-	dependencies = { 
+	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
 		{ "nvim-telescope/telescope-file-browser.nvim" },
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "mingw32-make",
-			enabled = vim.fn.executable("mingw32-make") == 1,
+			build = function ()
+				if vim.fn.executable("make") == 1 then return "make" end
+				if vim.fn.executable("mingw32-make") == 1 then return "mingw32-make" end
+			end,
+			enabled = vim.fn.executable("make") == 1 or vim.fn.executable("mingw32-make") == 1,
 		},
 	},
 	opts = {
@@ -44,7 +47,7 @@ return {
 				-- depth = 1,
 				hidden = {
 					file_browser = true, -- mostrar archivos ocultos
-					folder_browser = true 
+					folder_browser = true
 				},
 				dir_icon = "", -- icon for directory
 				hijack_netrw = false, -- disables netrw and use telescope-file-browser in its place
@@ -92,7 +95,7 @@ return {
 		{ "<leader>gS", ":Telescope git_stash<CR>", silent = true }, -- Lists stash items in current repository with ability to apply them on <cr>
 		-- { "<leader>fg", ":Telescope git_files<CR>", silent = true }, -- Fuzzy search through the output of git ls-files command
 
-		
+
 		-- LSP PICKERS
 		-- { "<leader>sr", ":Telescope lsp_references<CR>", silent = true }, -- Lists LSP references for word under the cursor
 		{ "<leader>sic", ":Telescope lsp_incoming_calls<CR>", silent = true }, -- Lists LSP incoming calls for word under the cursor
